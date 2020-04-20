@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.geyibin.mapper.ReturnBookMapper">
+  <resultMap id="BaseResultMap" type="com.example.geyibin.pojo.ReturnBook">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="Id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="book_id" jdbcType="BIGINT" property="bookId" />
+    <result column="borrow_id" jdbcType="BIGINT" property="borrowId" />
+    <result column="indemnity" jdbcType="DOUBLE" property="indemnity" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>
