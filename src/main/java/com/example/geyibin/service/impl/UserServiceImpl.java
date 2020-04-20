@@ -37,6 +37,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public FindUserByIdResponse loginIn(LoginInRequest request) {
+        User user = userDao.loginIn(request.getUserName(), request.getPassword());
+        return changeFindUserById(user);
+    }
+
+    @Override
     public Integer updateUserBaseInfo(UpdateUserBaseInfoRequest request) {
         User user = userDao.findUserById(request.getId());
         BeanUtils.copyProperties(request,user);

@@ -28,6 +28,14 @@ public class UserController {
         }
     }
 
+    @PostMapping("loginIn")
+    public BooksManagementJsonResult<FindUserByIdResponse> loginIn(LoginInRequest request){
+        FindUserByIdResponse findUserByIdResponse = userService.loginIn(request);
+        if(findUserByIdResponse!=null){
+            return BooksManagementJsonResult.ok(findUserByIdResponse);
+        }else return BooksManagementJsonResult.errorMsg("用户名或密码错误");
+    }
+
     @PostMapping("update/user/info")
     public BooksManagementJsonResult<Integer> updateUserBaseInfo(@RequestBody UpdateUserBaseInfoRequest request){
         return BooksManagementJsonResult.ok(userService.updateUserBaseInfo(request));

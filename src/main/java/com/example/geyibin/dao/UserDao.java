@@ -18,6 +18,13 @@ public class UserDao {
         return userMapper.insert(user);
     }
 
+    public User loginIn(String userName,String password){
+        Example example = new Example(User.class);
+        example.createCriteria().andEqualTo("userName",userName)
+                .andEqualTo("password",password);
+        return userMapper.selectOneByExample(example);
+    }
+
     public Integer updateUser(User user){
         return userMapper.updateByPrimaryKeySelective(user);
     }
